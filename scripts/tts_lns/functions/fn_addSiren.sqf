@@ -54,59 +54,6 @@ if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) then {
 
 	[_vehicle] remoteExec ["tts_lns_fnc_addSirenActions", 0, _vehicle];
 
-	/*if (!(_vehicle getVariable ["tts_lns_hasSirenActions", false])) then { // only add action if the vehicle doesn't already have it
-		// toggle on/off
-		[_vehicle, ["Toggle light bar", {
-			params ["_target", "_caller", "_actionId", "_arguments"];
-
-			if (_target getVariable ["tts_lns_lightsOn", false]) then {
-				_target setVariable ["tts_lns_lightsOn", false, true];
-				hint "Lights: Off";
-			} else {
-				_target setVariable ["tts_lns_lightsOn", true, true];
-				[_target] remoteExec ["tts_lns_fnc_turnLightsOn", 0, false];
-				hint "Lights: On";
-			};
-		},
-		[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false]"]] remoteExec ["addAction", 0, _vehicle];
-
-		// cycle pattern
-		[_vehicle, ["Cycle light bar pattern", {
-			params ["_target", "_caller", "_actionId", "_arguments"];
-
-			_target setVariable ["tts_lns_lightMode", ((_target getVariable ["tts_lns_lightMode", 0])+1) % 2, true];
-			hint ("Light Mode: " + ["Alternate", "Double Flash"]#(_target getVariable ["tts_lns_lightMode", 0]));
-		},
-		[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false] && !(_target getVariable ['tts_lns_disableLightChange', false])"]] remoteExec ["addAction", 0, _vehicle];
-		_vehicle setVariable ["tts_lns_hasSirenActions", true, true];
-
-		// toggle on/off
-		[_vehicle, ["Toggle siren", {
-			params ["_target", "_caller", "_actionId", "_arguments"];
-
-			if (_target getVariable ["tts_lns_sirenOn", false]) then {
-				_target setVariable ["tts_lns_sirenOn", false, true];
-				hint "Siren: Off";
-			} else {
-				_target setVariable ["tts_lns_sirenOn", true, true];
-				[_target] remoteExec ["tts_lns_fnc_turnSirenOn", 0, false];
-				hint "Siren: On";
-			};
-		},
-		[], 6, false, false, "", "driver _target == _this && count (_target getVariable ['tts_lns_sirenTypes', ['Wail']]) > 0"]] remoteExec ["addAction", 0, _vehicle];
-
-		// cycle siren
-		[_vehicle, ["Cycle siren mode", {
-			params ["_target", "_caller", "_actionId", "_arguments"];
-
-			_target setVariable ["tts_lns_sirenMode", ((_target getVariable ["tts_lns_sirenMode", 0])+1) % count (_target getVariable ['tts_lns_sirenTypes', ['Wail']]), true];
-			hint ("Siren Mode: " + (_target getVariable ['tts_lns_sirenTypes', ['Wail']])#(_target getVariable ["tts_lns_sirenMode", 0]));
-		},
-		[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false] && count (_target getVariable ['tts_lns_sirenTypes', ['Wail']]) > 1"]] remoteExec ["addAction", 0, _vehicle];
-		_vehicle setVariable ["tts_lns_hasSirenActions", true, true];
-	};
-	*/
-
 	if (_fakeLightBar) then {
 		private _leftLight = "Land_TentLamp_01_suspended_F" createVehicle (getPosATL _vehicle);
 		private _leftColourTexture = format ["#(argb,8,8,3)color(%1,%2,%3,0.2,ca)", (_rgbColours#0)#0, (_rgbColours#0)#1, (_rgbColours#0)#2];

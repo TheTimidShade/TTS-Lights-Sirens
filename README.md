@@ -10,6 +10,8 @@ Designed for Arma 3, this script allows mission makers and Zeuses to add more so
 - Works in MP (Tested on dedicated server)
 - Compatible with Zeus Enhanced
 
+You will not be able to use this script from Zeus unless Zeus Enhanced is loaded.
+
 The provided light colours are:
 - Red
 - Blue
@@ -17,23 +19,27 @@ The provided light colours are:
 - Yellow
 - Green
 - White
-- Magenta/Purple
-(Based on common colours for emergency/utility vehicles https://en.wikipedia.org/wiki/Emergency_vehicle_lighting)
+- Magenta/Purple  
+
+(Based on common colours for emergency/utility vehicles https://en.wikipedia.org/wiki/Emergency_vehicle_lighting)  
+
+The provided siren types are 'Wail', 'Yelp' and 'Phaser'.
+
+
+
+Demo Video: N/A  
+Steam Workshop page: N/A  
+Zeus Enhanced: https://steamcommunity.com/sharedfiles/filedetails/?id=1779063631  
+
+***
+
 If you really want to use a different colour to what is provided you can overwrite this colour using:
 ```sqf
 vehicle setVariable ["tts_lns_lightBarColours", [[R,G,B], [R,G,B]], true];
 ```
 Where the first set of RGB values is the left light and the second is the right light. R/G/B value must be from 0-1, so divide by 255 if you are converting from a format like [51, 102, 204]. You might notice excessive brightness if you don't do this.
 
-**NOTE**: This won't work for the fake light bar since it uses premade textures for the provided colours. You might get errors if you try this on a vehicle that uses the fake light bar.
-
-The provided siren types are 'Wail', 'Yelp' and 'Phaser'.
-
-You will not be able to use this script from Zeus unless Zeus Enhanced is loaded.
-
-Demo Video: N/A  
-Steam Workshop page: N/A  
-Zeus Enhanced: https://steamcommunity.com/sharedfiles/filedetails/?id=1779063631  
+**NOTE**: This won't work for the fake light bar since it uses premade textures for the provided colours so it will probably error if you try it.
 
 ## Setup/Use:
 1. Download files from repository.

@@ -1,0 +1,10 @@
+class CfgFunctions
+{
+	#include "scripts\tts_lns\cfgFunctions.hpp"
+};
+
+class CfgSounds
+{
+	sounds[] = {};
+	#include "scripts\tts_lns\cfgSounds.hpp"
+};

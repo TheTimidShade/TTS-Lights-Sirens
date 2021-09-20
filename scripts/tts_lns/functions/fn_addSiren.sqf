@@ -52,7 +52,11 @@ if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) then {
 	_vehicle setVariable ["tts_lns_hasSiren", true, true];
 	_vehicle setVariable ["tts_lns_fakeLightBarObjs", [objNull, objNull], true];
 
-	[_vehicle] remoteExec ["tts_lns_fnc_addSirenActions", 0, _vehicle];
+	private _messagePrefix = format ["%1_", _vehicle];
+	private _jipMessages = [];
+	_jipMessages pushBack ([_vehicle] remoteExec ["tts_lns_fnc_addSirenActions", 0, _messagePrefix + "actions"]);
+	_jipMessages pushBack ([_vehicle] remoteExec ["tts_lns_fnc_handleSirenJIP", 0, _messagePrefix + "jipToggle"]);
+	_vehicle setVariable ["tts_lns_jipMessages", _jipMessages, true];
 
 	if (_fakeLightBar) then {
 		private _leftLight = "Land_TentLamp_01_suspended_F" createVehicle (getPosATL _vehicle);

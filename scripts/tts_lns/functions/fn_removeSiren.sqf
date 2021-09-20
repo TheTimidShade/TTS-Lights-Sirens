@@ -18,7 +18,7 @@ params [
 
 if (!isServer) exitWith {};
 if (isNull _vehicle) exitWith {};
-if (!(_vehicle getVariable ["tts_lns_hasSirenActions", false])) exitWith {}; // no need to remove anything if the vehicle has no siren
+if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) exitWith {}; // no need to remove anything if the vehicle has no siren
 
 // cleanup fake light bar if there is one
 private _fakeLights = _vehicle getVariable ["tts_lns_fakeLightBarObjs", [objNull, objNull]];
@@ -30,3 +30,9 @@ _vehicle setVariable ["tts_lns_lightMode", 0, true];
 _vehicle setVariable ["tts_lns_sirenOn", false, true];
 _vehicle setVariable ["tts_lns_sirenMode", 0, true];
 _vehicle setVariable ["tts_lns_hasSiren", false, true];
+
+// remove actions
+[_vehicle] remoteExec ["tts_lns_removeSirenActions", 0];
+
+// remove messages from JIP queue
+{remoteExec ["", _x];} forEach (_vehicle getVariable ["tts_lns_jipMessages", []]);

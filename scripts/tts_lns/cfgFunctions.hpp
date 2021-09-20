@@ -4,10 +4,12 @@ class tts_lns
 	{
 		file = "scripts\tts_lns\functions";
 		class addSiren {};
-		class turnLightsOn {};
 		class removeSiren {};
+		class turnLightsOn {};
 		class turnSirenOn {};
 		class createSirenSound {};
 		class addSirenActions {};
+		class removeSirenActions {};
+		class handleSirenJIP;
 	};
 };

@@ -25,8 +25,6 @@ The provided light colours are:
 
 The provided siren types are 'Wail', 'Yelp' and 'Phaser'.
 
-
-
 Demo Video: N/A  
 Steam Workshop page: N/A  
 Zeus Enhanced: https://steamcommunity.com/sharedfiles/filedetails/?id=1779063631  
@@ -49,6 +47,10 @@ Where the first set of RGB values is the left light and the second is the right 
 
 ## Changelog
 Read below for complete changelog history.
+
+### 20/09/2021
+- Fixed JIP adding/removing of actions not working.
+- Fixed lights/sirens that are on not being turned on for JIP players.
 
 ### 19/09/2021
 - Created repository.

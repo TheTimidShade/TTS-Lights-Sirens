@@ -42,7 +42,7 @@ if (!(_vehicle getVariable ["tts_lns_hasSirenActions", false])) then // only add
 		params ["_target", "_caller", "_actionId", "_arguments"];
 
 		_target setVariable ["tts_lns_lightMode", ((_target getVariable ["tts_lns_lightMode", 0])+1) % 2, true];
-		hint ("Light Mode: " + ["Alternate", "Double Flash"]#(_target getVariable ["tts_lns_lightMode", 0]));
+		hint ("Light Mode: " + ["Alternating", "Double Flash"]#(_target getVariable ["tts_lns_lightMode", 0]));
 	},
 	[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false] && !(_target getVariable ['tts_lns_disableLightChange', false])"]);
 

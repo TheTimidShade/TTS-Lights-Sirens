@@ -23,7 +23,9 @@ The provided light colours are:
 
 (Based on common colours for emergency/utility vehicles https://en.wikipedia.org/wiki/Emergency_vehicle_lighting)  
 
-The provided siren types are 'Wail', 'Yelp' and 'Phaser'.
+Provided light patterns are 'Alternating' and 'Double Flash'.
+
+Provided siren types are 'Wail', 'Yelp' and 'Phaser'.
 
 Demo Video: N/A  
 Steam Workshop page: N/A  
@@ -51,6 +53,8 @@ Read below for complete changelog history.
 ### 20/09/2021
 - Fixed JIP adding/removing of actions not working.
 - Fixed lights/sirens that are on not being turned on for JIP players.
+- Added V1 of ZEN modules.
+- Fixed fake light bar not getting deleted properly when the vehicle they were attached to was deleted.
 
 ### 19/09/2021
 - Created repository.

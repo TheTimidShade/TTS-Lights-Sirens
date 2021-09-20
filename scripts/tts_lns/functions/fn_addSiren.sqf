@@ -11,6 +11,7 @@
 		3: ARRAY (OPTIONAL) - Offset position of light bar placement on vehicle
 		5: NUMBER (OPTIONAL) - Offset of light bar light points from model centre pos
 		6: BOOL (OPTIONAL) - Whether or not to add fake lightbar to vehicle (i.e. if you want to use a vehicle that doesn't normally have a light bar)
+		7: BOOL (OPTIONAL) - If set to true, disables the action to change light patterns
 		
 		// OFFSET FOR VANILLA VEHICLES:
 		Offroad: 	[-0.035,0.02,0.6], 0.4
@@ -28,11 +29,13 @@ params [
 	["_lightBarColours", ["red", "blue"], [[]], [2]],
 	["_lightBarOffset", [-0.035,0.02,0.6], [[]], [3]],
 	["_lightOffset", 0.4, [0]],
-	["_fakeLightBar", false, [true]]
+	["_fakeLightBar", false, [true]],
+	["_disableLightChange", true, [true]]
 ];
 
 if (!isServer) exitWith {};
 if (isNull _vehicle) exitWith {};
+if (!(_vehicle isKindOf "Air" || _vehicle isKindOf "LandVehicle")) exitWith {};
 
 {if (!(_x in ["Wail", "Yelp", "Phaser"])) then {_sirenTypes set [_forEachIndex, "Wail"];};} forEach _sirenTypes;
 
@@ -47,6 +50,7 @@ _vehicle setVariable ["tts_lns_lightBarColours", _rgbColours, true];
 _vehicle setVariable ["tts_lns_sirenTypes", _sirenTypes, true];
 _vehicle setVariable ["tts_lns_lightBarOffset", _lightBarOffset, true];
 _vehicle setVariable ["tts_lns_lightOffset", _lightOffset, true];
+_vehicle setVariable ["tts_lns_disableLightChange", _disableLightChange, true];
 
 if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) then {
 	_vehicle setVariable ["tts_lns_hasSiren", true, true];
@@ -78,6 +82,7 @@ if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) then {
 		_rightLight allowDamage false;
 
 		_vehicle setVariable ["tts_lns_fakeLightBarObjs", [_rightLight, _leftLight], true];
+		_vehicle spawn tts_lns_fnc_handleLightBarCleanup; // clean up light bar if vehicle is deleted
 	};
 } else { // vehicle already has a siren, remove old one then re-call the function
 	[_vehicle] call tts_lns_fnc_removeSiren;

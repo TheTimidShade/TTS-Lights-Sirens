@@ -10,9 +10,15 @@ if (isClass (configFile >> "CfgPatches" >> "zen_main")) then {
 		[
 			"Configure Lights/Siren", // title
 		 	[ // array of controls for dialog
-				["EDIT", ["Siren types", "Siren types this vehicle has access to seperated by commas. Valid options are 'Wail', 'Yelp' and 'Phaser'\nDefault is 'Wail,Yelp,Phaser'"],
+				["EDIT", ["Siren types", "Siren types this vehicle has access to seperated by commas. Valid options are 'Wail', 'Yelp' and 'Phaser'\nDefault is 'Wail,Yelp,Phaser'.\nIf empty, siren will be disabled"],
 					[ // control args
 						"Wail,Yelp,Phaser"
+					],
+					false // force default
+				],
+				["EDIT", ["Light patterns", "Light pattern types this vehicle has access to seperated by commas. Valid options are 'Alternating', 'DoubleFlash' and 'RapidAlt'\nDefault is 'Alternating,DoubleFlash,RapidAlt'.\nIf empty, light bar will be disabled"],
+					[ // control args
+						"Alternating,DoubleFlash,RapidAlt"
 					],
 					false // force default
 				],
@@ -52,22 +58,19 @@ if (isClass (configFile >> "CfgPatches" >> "zen_main")) then {
 						false
 					],
 					false // force default
-				],
-				["CHECKBOX", ["Disable light pattern change", "If checked this will disable the action to change light pattern"],
-					[ // control args
-						false
-					],
-					false // force default
 				]
 			],
 			{ // code run on dialog closed (only run if OK is clicked)
 				params ["_dialogResult", "_args"];
 				_args params ["_attachedObject"];
-				_dialogResult params ["_sirenTypes", "_leftColour", "_rightColour", "_lightBarOffset", "_lightCentreOffset", "_fakeLightBar", "_disableLightChange"];
+				_dialogResult params ["_sirenTypes", "_patternTypes", "_leftColour", "_rightColour", "_lightBarOffset", "_lightCentreOffset", "_fakeLightBar"];
 				_sirenTypes = _sirenTypes splitString ",";
+				_patternTypes = _patternTypes splitString ",";
 				_lightBarOffset = parseSimpleArray _lightBarOffset;
-				
-				[_attachedObject, _sirenTypes, [_leftColour, _rightColour], _lightBarOffset, _lightCentreOffset, _fakeLightBar, _disableLightChange] remoteExecCall ["tts_lns_fnc_addSiren", 2];
+
+				[vehicle1, ["Wail", "Yelp", "Phaser"], ["Alternating", "DoubleFlash", "RapidAlt"], ["red", "blue"], [-0.035,0.02,0.6], 0.4, false] call tts_lns_fnc_addSiren;
+
+				[_attachedObject, _sirenTypes, _patternTypes, [_leftColour, _rightColour], _lightBarOffset, _lightCentreOffset, _fakeLightBar] remoteExecCall ["tts_lns_fnc_addSiren", 2];
 				["Added lights/siren!"] call zen_common_fnc_showMessage;
 			}, {}, [_attachedObject] // args
 		] call zen_dialog_fnc_create;

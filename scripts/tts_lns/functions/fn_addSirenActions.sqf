@@ -35,16 +35,16 @@ if (!(_vehicle getVariable ["tts_lns_hasSirenActions", false])) then // only add
 			hint "Lights: On";
 		};
 	},
-	[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false]"]);
+	[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false] && count (_target getVariable ['tts_lns_patternTypes', ['Alternating']]) > 0"]);
 
 	// cycle pattern
 	_sirenActionIDs pushBack (_vehicle addAction ["Cycle light bar pattern", {
 		params ["_target", "_caller", "_actionId", "_arguments"];
-
-		_target setVariable ["tts_lns_lightMode", ((_target getVariable ["tts_lns_lightMode", 0])+1) % 2, true];
-		hint ("Light Mode: " + ["Alternating", "Double Flash"]#(_target getVariable ["tts_lns_lightMode", 0]));
+		
+		_target setVariable ["tts_lns_lightMode", ((_target getVariable ["tts_lns_lightMode", 0])+1) % count (_target getVariable ['tts_lns_patternTypes', ["Alternating"]]), true];
+		hint ("Light Mode: " + (_target getVariable ['tts_lns_patternTypes', ["Alternating"]])#(_target getVariable ["tts_lns_lightMode", 0]));
 	},
-	[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false] && !(_target getVariable ['tts_lns_disableLightChange', false])"]);
+	[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false] && count (_target getVariable ['tts_lns_patternTypes', ['Alternating']]) > 1"]);
 
 	// toggle on/off
 	_sirenActionIDs pushBack (_vehicle addAction ["Toggle siren", {

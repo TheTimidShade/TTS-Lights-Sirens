@@ -23,7 +23,7 @@ The provided light colours are:
 
 (Based on common colours for emergency/utility vehicles https://en.wikipedia.org/wiki/Emergency_vehicle_lighting)  
 
-Provided light patterns are 'Alternating' and 'Double Flash'.
+Provided light patterns are 'Alternating', 'DoubleFlash' and 'RapidAlt'.
 
 Provided siren types are 'Wail', 'Yelp' and 'Phaser'.
 
@@ -49,6 +49,10 @@ Where the first set of RGB values is the left light and the second is the right 
 
 ## Changelog
 Read below for complete changelog history.
+
+### 21/09/2021
+- Added variable light pattern system same as siren system so amount and type of light patterns can be customised.
+- Added the ability to leave the light/siren type lists empty to disable them.
 
 ### 20/09/2021
 - Fixed JIP adding/removing of actions not working.

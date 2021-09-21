@@ -20,6 +20,7 @@ if (!hasInterface) exitWith {};
 if (isNull _vehicle) exitWith {};
 
 // set up lights/objects/variables
+private _patternTypes = _vehicle getVariable ["tts_lns_patternTypes", ["Alternating"]];
 private _lightBarColours = _vehicle getVariable ["tts_lns_lightBarColours", [[0,0,1], [1,0,0]]];
 private _lightBarOffset = _vehicle getVariable ["tts_lns_lightBarOffset", [-0.035,0.02,0.6]];
 private _lightOffset = _vehicle getVariable ["tts_lns_lightOffset", 0.4];
@@ -58,7 +59,8 @@ _rightSphere hideObject true;
 
 // start light loop
 while {alive _vehicle && _vehicle getVariable ["tts_lns_lightsOn", false]} do {
-	if (_vehicle getVariable ["tts_lns_lightMode", 0] == 0) then {
+	private _currentLightMode = _vehicle getVariable ["tts_lns_lightMode", 0];
+	if (_patternTypes#_currentLightMode == "Alternating") then {
 		// alternate
 		_rightLight setLightIntensity 150;
 		if (sunOrMoon > 0) then {_rightSphere hideObject false;};
@@ -75,7 +77,8 @@ while {alive _vehicle && _vehicle getVariable ["tts_lns_lightsOn", false]} do {
 		if (sunOrMoon > 0) then {_leftSphere hideObject false;};
 		
 		sleep 0.3;
-	} else {
+	};
+	if (_patternTypes#_currentLightMode == "DoubleFlash") then {
 		// double flash
 		_rightLight setLightIntensity 0;
 		_leftLight setLightIntensity 0;
@@ -103,6 +106,24 @@ while {alive _vehicle && _vehicle getVariable ["tts_lns_lightsOn", false]} do {
 			
 			sleep 0.1;
 		};
+	};
+	if (_patternTypes#_currentLightMode == "RapidAlt") then {
+		// rapid alternate
+		_rightLight setLightIntensity 150;
+		if (sunOrMoon > 0) then {_rightSphere hideObject false;};
+		
+		_leftLight setLightIntensity 0;
+		_leftSphere hideObject true;
+		
+		sleep 0.15;
+		
+		_rightLight setLightIntensity 0;
+		_rightSphere hideObject true;
+		
+		_leftLight setLightIntensity 150;
+		if (sunOrMoon > 0) then {_leftSphere hideObject false;};
+		
+		sleep 0.15;
 	};
 };
 

@@ -11,6 +11,8 @@ if (isClass (configFile >> "CfgPatches" >> "zen_main")) then {
 			["No lights/siren detected on this vehicle!"] call zen_common_fnc_showMessage;
 		};
 
+		private _patternTypeValues = [];
+		{_patternTypeValues pushBack _forEachIndex;} forEach (_attachedObject getVariable ["tts_lns_patternTypes", ["Alternating", "DoubleFlash", "RapidAlt"]]);
 		[
 			"Configure Lights", // title
 		 	[ // array of controls for dialog
@@ -22,8 +24,8 @@ if (isClass (configFile >> "CfgPatches" >> "zen_main")) then {
 				],
 				["COMBO", ["Light pattern", "Changes the pattern of the vehicle's light bar"],
 					[ // control args
-						[0, 1], // return values
-						["Alternating", "Double Flash"], // labels
+						_patternTypeValues, // return values
+						_attachedObject getVariable ["tts_lns_patternTypes", ["Alternating", "DoubleFlash", "RapidAlt"]], // labels
 						_attachedObject getVariable ["tts_lns_lightMode", 0]
 					],
 					true // force default

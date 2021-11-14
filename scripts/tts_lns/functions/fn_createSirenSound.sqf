@@ -30,6 +30,7 @@ switch (_sirenString) do {
 	case "Wail": {_soundName = "tts_lns_sirenWail"; _soundLoopDelay = 6.18;};
 	case "Yelp": {_soundName = "tts_lns_sirenYelp"; _soundLoopDelay = 0.99;};
 	case "Phaser": {_soundName = "tts_lns_sirenPhaser"; _soundLoopDelay = 1;};
+	case "TwoTone": {_soundName = "tts_lns_sirenTwoTone"; _soundLoopDelay = 2;};
 };
 
 private _soundSource = "#particlesource" createVehicleLocal (getPosATL _vehicle);

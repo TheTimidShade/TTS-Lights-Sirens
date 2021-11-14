@@ -1,8 +1,9 @@
 class tts_lns
 {
-	class Main
+	class lns
 	{
 		file = "scripts\tts_lns\functions";
+		class init { postInit = 1; };
 		class addSiren {};
 		class removeSiren {};
 		class turnLightsOn {};
@@ -10,16 +11,16 @@ class tts_lns
 		class createSirenSound {};
 		class addSirenActions {};
 		class removeSirenActions {};
-		class handleSirenJIP;
+		class handleSirenJIP {};
 		class handleLightBarCleanup {};
 	};
-	class ZEN
+	class zen
 	{
 		file = "scripts\tts_lns\functions\zen";
-		class zen_initCustomModules {preInit = 1;};
-		class zen_addSiren {};
-		class zen_removeSiren {};
-		class zen_changeLights {};
-		class zen_changeSiren {};
+		class initCustomModules {};
+		class zen_moduleAddSiren {};
+		class zen_moduleRemoveSiren {};
+		class zen_moduleChangeLights {};
+		class zen_moduleChangeSiren {};
 	};
 };

@@ -1,14 +1,16 @@
-# Lights & Sirens Script
+# Lights + Sirens Script
 ## Overview:
 Designed for Arma 3, this script allows mission makers and Zeuses to add more sophisticated light/siren systems to vehicles. It can also be used to add a ~~pair of tent lights~~ very expensive custom light bar to vehicles that do not normally have one. The colour of the lights is customisable and multiple light patterns/sirens are available. It is also compatible with Zeus Enhanced so mission makers can use it to enhance their mission on the fly.
 
 ## Features:
 - Lights/sirens can be added to any vehicle
 - Customisable light colour/siren sound
-- Light pattern and siren type can be changed through the action menu (if added)
+- Light pattern and siren type can be changed through the action menu
 - Light/siren can be turned on via script/Zeus to support non-player vehicles
-- Works in MP (Tested on dedicated server)
+- Designed for multiplayer and tested on dedicated server
+- Compatible with ACE
 - Compatible with Zeus Enhanced
+- Editor modules to simplify usage (*Mod version only*!)
 
 You will not be able to use this script from Zeus unless Zeus Enhanced is loaded.
 
@@ -49,6 +51,12 @@ Where the first set of RGB values is the left light and the second is the right 
 
 ## Changelog
 Read below for complete changelog history.
+
+### 14/11/2021
+- Added ZEN module icons.
+- Cleaned up ZEN functions.
+- Added init function.
+- Added 'Two Tone' siren type.
 
 ### 21/09/2021
 - Added variable light pattern system same as siren system so amount and type of light patterns can be customised.

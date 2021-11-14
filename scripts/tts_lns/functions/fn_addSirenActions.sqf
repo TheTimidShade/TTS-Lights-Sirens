@@ -22,7 +22,7 @@ if (!(_vehicle getVariable ["tts_lns_hasSirenActions", false])) then // only add
 { 
 	private _sirenActionIDs = [];
 	
-	// toggle on/off
+	// toggle lights on/off
 	_sirenActionIDs pushBack (_vehicle addAction ["Toggle light bar", {
 		params ["_target", "_caller", "_actionId", "_arguments"];
 
@@ -37,7 +37,7 @@ if (!(_vehicle getVariable ["tts_lns_hasSirenActions", false])) then // only add
 	},
 	[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false] && count (_target getVariable ['tts_lns_patternTypes', ['Alternating']]) > 0"]);
 
-	// cycle pattern
+	// cycle light pattern
 	_sirenActionIDs pushBack (_vehicle addAction ["Cycle light bar pattern", {
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		
@@ -46,7 +46,7 @@ if (!(_vehicle getVariable ["tts_lns_hasSirenActions", false])) then // only add
 	},
 	[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false] && count (_target getVariable ['tts_lns_patternTypes', ['Alternating']]) > 1"]);
 
-	// toggle on/off
+	// toggle siren on/off
 	_sirenActionIDs pushBack (_vehicle addAction ["Toggle siren", {
 		params ["_target", "_caller", "_actionId", "_arguments"];
 
@@ -71,5 +71,5 @@ if (!(_vehicle getVariable ["tts_lns_hasSirenActions", false])) then // only add
 	[], 6, false, false, "", "driver _target == _this && _target getVariable ['tts_lns_hasSiren', false] && count (_target getVariable ['tts_lns_sirenTypes', ['Wail']]) > 1"]);
 	
 	_vehicle setVariable ["tts_lns_hasSirenActions", true];
-	_vehicle setVariable ["tts_lns_sirenActionIDs", _sirenActionIDs];
+	_vehicle setVariable ["tts_lns_sirenActionIDs", _sirenActionIDs]; // store action IDs so they can be removed later
 };

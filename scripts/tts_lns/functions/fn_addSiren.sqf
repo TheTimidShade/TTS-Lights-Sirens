@@ -40,8 +40,9 @@ if (!isServer) exitWith {};
 if (isNull _vehicle) exitWith {};
 if (!(_vehicle isKindOf "Air" || _vehicle isKindOf "LandVehicle")) exitWith {};
 
+// validate parameters
 private _validSirens = []; private _validPatterns = [];
-{if (_x in ["Wail", "Yelp", "Phaser"]) then {_validSirens pushBack _x;};} forEach _sirenTypes;
+{if (_x in ["Wail", "Yelp", "Phaser", "TwoTone"]) then {_validSirens pushBack _x;};} forEach _sirenTypes;
 {if (_x in ["Alternating", "DoubleFlash", "RapidAlt"]) then {_validPatterns pushBack _x;};} forEach _patternTypes;
 
 private _validColours = ["red", "blue", "amber", "yellow", "green", "white", "magenta"];
@@ -57,16 +58,20 @@ _vehicle setVariable ["tts_lns_patternTypes", _validPatterns, true];
 _vehicle setVariable ["tts_lns_lightBarOffset", _lightBarOffset, true];
 _vehicle setVariable ["tts_lns_lightOffset", _lightOffset, true];
 
-if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) then {
+// only add lights and sirens if the vehicle does not already have them
+if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) then
+{
 	_vehicle setVariable ["tts_lns_hasSiren", true, true];
 	_vehicle setVariable ["tts_lns_fakeLightBarObjs", [objNull, objNull], true];
 
+	// compatibility for JIP
 	private _messagePrefix = format ["%1_", _vehicle];
 	private _jipMessages = [];
 	_jipMessages pushBack ([_vehicle] remoteExec ["tts_lns_fnc_addSirenActions", 0, _messagePrefix + "actions"]);
 	_jipMessages pushBack ([_vehicle] remoteExec ["tts_lns_fnc_handleSirenJIP", 0, _messagePrefix + "jipToggle"]);
 	_vehicle setVariable ["tts_lns_jipMessages", _jipMessages, true];
 
+	// add fake light bar
 	if (_fakeLightBar) then {
 		private _leftLight = "Land_TentLamp_01_suspended_F" createVehicle (getPosATL _vehicle);
 		private _leftColourTexture = format ["#(argb,8,8,3)color(%1,%2,%3,0.2,ca)", (_rgbColours#0)#0, (_rgbColours#0)#1, (_rgbColours#0)#2];
@@ -89,7 +94,10 @@ if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) then {
 		_vehicle setVariable ["tts_lns_fakeLightBarObjs", [_rightLight, _leftLight], true];
 		_vehicle spawn tts_lns_fnc_handleLightBarCleanup; // clean up light bar if vehicle is deleted
 	};
-} else { // vehicle already has a siren, remove old one then re-call the function
+}
+// vehicle already has a siren, remove old one then re-call the function
+else
+{ 
 	[_vehicle] call tts_lns_fnc_removeSiren;
 	[_vehicle, _sirenTypes, _patternTypes, _lightBarColours, _lightBarOffset, _lightOffset, _fakeLightBar] call tts_lns_fnc_addSiren;
 };

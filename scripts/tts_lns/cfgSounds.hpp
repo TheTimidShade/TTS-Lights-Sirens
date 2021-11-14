@@ -12,8 +12,8 @@ class tts_lns_sirenYelp
 };
 class tts_lns_sirenTwoTone
 {
-    name = "sirenYelp";
-    sound[] = {"scripts\tts_lns\sounds\twotone5.ogg", 0.9, 1, 800};
+    name = "sirenTwoTone";
+    sound[] = {"scripts\tts_lns\sounds\twotone.ogg", 0.9, 1, 800};
     titles[] = {0,""};
 };
 class tts_lns_sirenPhaser

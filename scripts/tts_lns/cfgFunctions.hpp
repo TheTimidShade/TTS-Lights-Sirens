@@ -12,7 +12,10 @@ class tts_lns
 		class addSirenActions {};
 		class removeSirenActions {};
 		class handleSirenJIP {};
+		class setupLightBar {};
 		class handleLightBarCleanup {};
+		class flashLight {};
+		class createLightObjects {};
 	};
 	class zen
 	{

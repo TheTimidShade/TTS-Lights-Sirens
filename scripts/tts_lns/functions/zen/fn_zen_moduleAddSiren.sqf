@@ -1,49 +1,49 @@
-["TTS Lights + Sirens", "Add Lights/Siren",
+["TTS Lights + Sirens", "STR_tts_lns_moduleAddSiren_title",
 {
 	params [["_position", [0,0,0], [[]], 3], ["_attachedObject", objNull, [objNull]]];
 
-	if (isNull _attachedObject || !(_attachedObject isKindOf "Air" || _attachedObject isKindOf "LandVehicle")) exitWith {
-		["Must be placed on an aircraft/land vehicle!"] call zen_common_fnc_showMessage;
+	if (!alive _attachedObject || !(_attachedObject isKindOf "Air" || _attachedObject isKindOf "LandVehicle")) exitWith {
+		["STR_tts_lns_moduleAddSiren_warning"] call zen_common_fnc_showMessage;
 	};
 
 	[
-		"Configure Lights/Siren", // title
+		"STR_tts_lns_moduleAddSiren_title", // title
 		[ // array of controls for dialog
-			["EDIT", ["Siren types", "Siren types this vehicle has access to seperated by commas. Valid options are 'Wail', 'Yelp' and 'Phaser'\nDefault is 'Wail,Yelp,Phaser'.\nIf empty, siren will be disabled"],
+			["EDIT", ["STR_tts_lns_moduleAddSiren_sirenTypes", "STR_tts_lns_moduleAddSiren_sirenTypes_desc"],
 				[ // control args
 					"Wail,Yelp,Phaser"
 				],
 				false // force default
 			],
-			["EDIT", ["Light patterns", "Light pattern types this vehicle has access to seperated by commas. Valid options are 'Alternating', 'DoubleFlash' and 'RapidAlt'\nDefault is 'Alternating,DoubleFlash,RapidAlt'.\nIf empty, light bar will be disabled"],
+			["EDIT", ["STR_tts_lns_moduleAddSiren_lightPatterns", "STR_tts_lns_moduleAddSiren_lightPatterns_desc"],
 				[ // control args
 					"Alternating,DoubleFlash,RapidAlt"
 				],
 				false // force default
 			],
-			["COMBO", ["Left light colour", "Colour of the left light in the light bar"],
+			["COMBO", ["STR_tts_lns_moduleAddSiren_leftLightColour", "STR_tts_lns_moduleAddSiren_leftLightColour_desc"],
 				[ // control args
 					["red", "blue", "amber", "yellow", "green", "white", "magenta"], // return values
-					["Red", "Blue", "Amber", "Yellow", "Green", "White", "Magenta"], // labels
+					["STR_tts_lns_moduleAddSiren_colour_red", "STR_tts_lns_moduleAddSiren_colour_blue", "STR_tts_lns_moduleAddSiren_colour_amber", "STR_tts_lns_moduleAddSiren_colour_yellow", "STR_tts_lns_moduleAddSiren_colour_green", "STR_tts_lns_moduleAddSiren_colour_white", "STR_tts_lns_moduleAddSiren_colour_magenta"], // labels
 					0 // element 0 is default selected
 				],
 				false // force default
 			],
-			["COMBO", ["Right light colour", "Colour of the right light in the light bar"],
+			["COMBO", ["STR_tts_lns_moduleAddSiren_rightLightColour", "STR_tts_lns_moduleAddSiren_rightLightColour_desc"],
 				[ // control args
 					["red", "blue", "amber", "yellow", "green", "white", "magenta"], // return values
-					["Red", "Blue", "Amber", "Yellow", "Green", "White", "Magenta"], // labels
+					["STR_tts_lns_moduleAddSiren_colour_red", "STR_tts_lns_moduleAddSiren_colour_blue", "STR_tts_lns_moduleAddSiren_colour_amber", "STR_tts_lns_moduleAddSiren_colour_yellow", "STR_tts_lns_moduleAddSiren_colour_green", "STR_tts_lns_moduleAddSiren_colour_white", "STR_tts_lns_moduleAddSiren_colour_magenta"], // labels
 					1 // element 0 is default selected
 				],
 				false // force default
 			],
-			["EDIT", ["Light bar offset", "The offset (in m) from the vehicle's position the light bar is attached"],
+			["EDIT", ["STR_tts_lns_moduleAddSiren_lightBarOffset", "STR_tts_lns_moduleAddSiren_lightBarOffset_desc"],
 				[ // control args
 					str [-0.035,0.02,0.6]
 				],
 				false // force default
 			],
-			["SLIDER", ["Light centre offset", "The horizontal offset (in m) from the vehicle centre the lights on the light bar are placed"],
+			["SLIDER", ["STR_tts_lns_moduleAddSiren_lightCentreOffset", "STR_tts_lns_moduleAddSiren_lightCentreOffset_desc"],
 				[ // control args
 					0, // min
 					10, // max
@@ -52,7 +52,7 @@
 				],
 				false // force default
 			],
-			["CHECKBOX", ["Use fake light bar", "If checked this will attach a fake light bar to the vehicle at the light bar offset"],
+			["CHECKBOX", ["STR_tts_lns_moduleAddSiren_useFakeLightBar", "STR_tts_lns_moduleAddSiren_useFakeLightBar_desc"],
 				[ // control args
 					false
 				],
@@ -67,10 +67,8 @@
 			_patternTypes = _patternTypes splitString ",";
 			_lightBarOffset = parseSimpleArray _lightBarOffset;
 
-			[vehicle1, ["Wail", "Yelp", "Phaser"], ["Alternating", "DoubleFlash", "RapidAlt"], ["red", "blue"], [-0.035,0.02,0.6], 0.4, false] call tts_lns_fnc_addSiren;
-
 			[_attachedObject, _sirenTypes, _patternTypes, [_leftColour, _rightColour], _lightBarOffset, _lightCentreOffset, _fakeLightBar] remoteExecCall ["tts_lns_fnc_addSiren", 2];
-			["Added lights/siren!"] call zen_common_fnc_showMessage;
+			["STR_tts_lns_moduleAddSiren_completeMessage"] call zen_common_fnc_showMessage;
 		}, {}, [_attachedObject] // args
 	] call zen_dialog_fnc_create;
 }, "scripts\tts_lns\icons\lns_icon_64px.paa"] call zen_custom_modules_fnc_register;

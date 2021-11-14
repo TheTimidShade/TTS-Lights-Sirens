@@ -1,27 +1,27 @@
-["TTS Lights + Sirens", "Change Siren",
+["TTS Lights + Sirens", "STR_tts_lns_moduleChangeSiren_title",
 {
 	params [["_position", [0,0,0], [[]], 3], ["_attachedObject", objNull, [objNull]]];
 
 	if (isNull _attachedObject || !(_attachedObject isKindOf "Air" || _attachedObject isKindOf "LandVehicle")) exitWith {
-		["Must be placed on an aircraft/land vehicle!"] call zen_common_fnc_showMessage;
+		["STR_tts_lns_moduleAddSiren_warning"] call zen_common_fnc_showMessage;
 	};
 	
 	if (!(_attachedObject getVariable ["tts_lns_hasSiren", false])) exitWith {
-		["No lights/siren detected on this vehicle!"] call zen_common_fnc_showMessage;
+		["STR_tts_lns_moduleChangeLights_warning"] call zen_common_fnc_showMessage;
 	};
 
 	private _sirenModeValues = [];
 	{_sirenModeValues pushBack _forEachIndex;} forEach (_attachedObject getVariable ["tts_lns_sirenTypes", ["Wail", "Yelp", "Phaser"]]);
 	[
-		"Configure Siren", // title
+		"STR_tts_lns_moduleChangeSiren_title", // title
 		[ // array of controls for dialog
-			["CHECKBOX", ["Siren on", "Sets the state of the vehicle's siren"],
+			["CHECKBOX", ["STR_tts_lns_moduleChangeSiren_sirenOn", "STR_tts_lns_moduleChangeSiren_sirenOn_desc"],
 				[ // control args
 					_attachedObject getVariable ["tts_lns_sirenOn", false]
 				],
 				true // force default
 			],
-			["COMBO", ["Siren mode", "Changes the sound emitted by the vehicle's siren\nOnly siren types available to the vehicle are shown (defined by addSiren parameters)"],
+			["COMBO", ["STR_tts_lns_moduleChangeSirens_sirenMode", "STR_tts_lns_moduleChangeSirens_sirenMode_desc"],
 				[ // control args
 					_sirenModeValues, // return values
 					_attachedObject getVariable ["tts_lns_sirenTypes", ["Wail", "Yelp", "Phaser"]], // labels
@@ -46,7 +46,7 @@
 
 			// set siren mode
 			_attachedObject setVariable ["tts_lns_sirenMode", _sirenMode, true];
-			["Siren updated!"] call zen_common_fnc_showMessage;
+			["STR_tts_lns_moduleChangeSiren_completeMessage"] call zen_common_fnc_showMessage;
 
 		}, {}, [_attachedObject] // args
 	] call zen_dialog_fnc_create;

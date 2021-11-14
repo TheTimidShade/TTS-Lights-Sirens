@@ -57,6 +57,9 @@ Read below for complete changelog history.
 - Cleaned up ZEN functions.
 - Added init function.
 - Added 'Two Tone' siren type.
+- Added stringtable.
+- Split light bar setup into it's own function.
+- Cleaned up `fn_turnLightsOn`.
 
 ### 21/09/2021
 - Added variable light pattern system same as siren system so amount and type of light patterns can be customised.

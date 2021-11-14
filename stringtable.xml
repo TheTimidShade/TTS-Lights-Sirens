@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="TTS Lights + Sirens">
+    <Package name="General">
+    </Package>
+    <Package name="Modules">
+        <Container name="Add Siren module">
+            <Key ID="STR_tts_lns_moduleAddSiren_title">
+                <Original>Add Lights/Siren</Original>
+                <English>Add Lights/Siren</English>
+            </Key>
+            <Key ID="STR_tts_lns_moduleAddSiren_desc">
+                <Original>Adds lights/siren to synced vehicles with the provided settings.</Original>
+                <English>Adds lights/siren to synced vehicles with the provided settings.</English>
+            </Key>
+            <Key ID="STR_tts_lns_moduleAddSiren_warning">
+                <Original>Must be placed on an aircraft, land vehicle or ship!</Original>
+                <English>Must be placed on an aircraft, land vehicle or ship!</English>
+            </Key>
+            <Key ID="STR_tts_lns_moduleAddSiren_completeMessage">
+                <Original>Added lights/siren!</Original>
+                <English>Added lights/siren!</English>
+            </Key>
+            <Container name="Siren types param">
+                <Key ID="STR_tts_lns_moduleAddSiren_sirenTypes">
+                    <Original>Siren types</Original>
+                    <English>Siren types</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_sirenTypes_desc">
+                    <Original>Siren types this vehicle can use seperated by commas\nIf empty, the siren will be disabled</Original>
+                    <English>Siren types this vehicle can use seperated by commas\nIf empty, the siren will be disabled</English>
+                </Key>
+            </Container>
+            <Container name="Light patterns param">
+                <Key ID="STR_tts_lns_moduleAddSiren_lightPatterns">
+                    <Original>Light patterns</Original>
+                    <English>Light patterns</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_lightPatterns_desc">
+                    <Original>Light pattern types this vehicle can use seperated by commas\nIf empty, the lights will be disabled</Original>
+                    <English>Light pattern types this vehicle can use seperated by commas\nIf empty, the lights will be disabled</English>
+                </Key>
+            </Container>
+            <Container name="Left light colour param">
+                <Key ID="STR_tts_lns_moduleAddSiren_leftLightColour">
+                    <Original>Left light colour</Original>
+                    <English>Left light colour</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_leftLightColour_desc">
+                    <Original>Colour of the left light in the light bar</Original>
+                    <English>Colour of the left light in the light bar</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_colour_red">
+                    <Original>Red</Original>
+                    <English>Red</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_colour_blue">
+                    <Original>Blue</Original>
+                    <English>Blue</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_colour_amber">
+                    <Original>Amber</Original>
+                    <English>Amber</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_colour_yellow">
+                    <Original>Yellow</Original>
+                    <English>Yellow</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_colour_green">
+                    <Original>Green</Original>
+                    <English>Green</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_colour_white">
+                    <Original>White</Original>
+                    <English>White</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_colour_magenta">
+                    <Original>Magenta</Original>
+                    <English>Magenta</English>
+                </Key>
+            </Container>
+            <Container name="Right light colour param">
+                <Key ID="STR_tts_lns_moduleAddSiren_rightLightColour">
+                    <Original>Right light colour</Original>
+                    <English>Right light colour</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_rightLightColour_desc">
+                    <Original>Colour of the right light in the light bar</Original>
+                    <English>Colour of the right light in the light bar</English>
+                </Key>
+            </Container>
+            <Container name="Light bar offset param">
+                <Key ID="STR_tts_lns_moduleAddSiren_lightBarOffset">
+                    <Original>Light bar offset</Original>
+                    <English>Light bar offset</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_lightBarOffset_desc">
+                    <Original>The offset (in m) from the vehicle's position the light bar is attached</Original>
+                    <English>The offset (in m) from the vehicle's position the light bar is attached</English>
+                </Key>
+            </Container>
+            <Container name="Light centre offset param">
+                <Key ID="STR_tts_lns_moduleAddSiren_lightCentreOffset">
+                    <Original>Light centre offset</Original>
+                    <English>Light centre offset</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_lightCentreOffset_desc">
+                    <Original>The horizontal offset (in m) from the light bar the light points are created</Original>
+                    <English>The horizontal offset (in m) from the light bar the light points are created</English>
+                </Key>
+            </Container>
+            <Container name="Use fake lightbar param">
+                <Key ID="STR_tts_lns_moduleAddSiren_useFakeLightBar">
+                    <Original>Use fake light bar</Original>
+                    <English>Use fake light bar</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_useFakeLightBar_desc">
+                    <Original>If checked this will attach a fake light bar to the vehicle at the light bar offset</Original>
+                    <English>If checked this will attach a fake light bar to the vehicle at the light bar offset</English>
+                </Key>
+            </Container>
+        </Container>
+        <Container name="Change lights module">
+            <Key ID="STR_tts_lns_moduleChangeLights_title">
+                <Original>Change Lights</Original>
+                <English>Change Lights</English>
+            </Key>
+            <Key ID="STR_tts_lns_moduleChangeLights_warning">
+                <Original>No lights/siren detected on this vehicle!</Original>
+                <English>No lights/siren detected on this vehicle!</English>
+            </Key>
+            <Key ID="STR_tts_lns_moduleChangeLights_completeMessage">
+                <Original>Lights updated!</Original>
+                <English>Lights updated!</English>
+            </Key>
+            <Container name="Lights on param">
+                <Key ID="STR_tts_lns_moduleChangeLights_lightsOn">
+                    <Original>Lights on</Original>
+                    <English>Lights on</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleChangeLights_lightsOn_desc">
+                    <Original>Sets the state of the vehicle's light bar</Original>
+                    <English>Sets the state of the vehicle's light bar</English>
+                </Key>
+            </Container>
+            <Container name="Light pattern param">
+                <Key ID="STR_tts_lns_moduleChangeLights_lightPattern">
+                    <Original>Light pattern</Original>
+                    <English>Light pattern</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleChangeLights_lightPattern_desc">
+                    <Original>Changes the pattern of the vehicle's light bar</Original>
+                    <English>Changes the pattern of the vehicle's light bar</English>
+                </Key>
+            </Container>
+        </Container>
+        <Container name="Change siren module">
+            <Key ID="STR_tts_lns_moduleChangeSiren_title">
+                <Original>Change Siren</Original>
+                <English>Change Siren</English>
+            </Key>
+            <Key ID="STR_tts_lns_moduleChangeSiren_completeMessage">
+                <Original>Siren updated!</Original>
+                <English>Siren updated!</English>
+            </Key>
+            <Container name="Siren on param">
+                <Key ID="STR_tts_lns_moduleChangeSiren_sirenOn">
+                    <Original>Siren on</Original>
+                    <English>Siren on</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleChangeSiren_sirenOn_desc">
+                    <Original>Sets the state of the vehicle's light bar</Original>
+                    <English>Sets the state of the vehicle's light bar</English>
+                </Key>
+            </Container>
+            <Container name="Siren mode param">
+                <Key ID="STR_tts_lns_moduleChangeSirens_sirenMode">
+                    <Original>Siren mode</Original>
+                    <English>Siren mode</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleChangeSirens_sirenMode_desc">
+                    <Original>Changes the mode of the vehicle's siren</Original>
+                    <English>Changes the mode of the vehicle's siren</English>
+                </Key>
+            </Container>
+        </Container>
+    </Package>
+</Project>

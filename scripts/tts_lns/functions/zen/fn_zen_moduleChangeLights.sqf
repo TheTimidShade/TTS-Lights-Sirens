@@ -1,19 +1,19 @@
-["TTS Lights + Sirens", "Change Lights",
+["TTS Lights + Sirens", "STR_tts_lns_moduleChangeLights_title",
 {
 	params [["_position", [0,0,0], [[]], 3], ["_attachedObject", objNull, [objNull]]];
 
 	if (isNull _attachedObject || !(_attachedObject isKindOf "Air" || _attachedObject isKindOf "LandVehicle")) exitWith {
-		["Must be placed on an aircraft/land vehicle!"] call zen_common_fnc_showMessage;
+		["STR_tts_lns_moduleAddSiren_warning"] call zen_common_fnc_showMessage;
 	};
 	
 	if (!(_attachedObject getVariable ["tts_lns_hasSiren", false])) exitWith {
-		["No lights/siren detected on this vehicle!"] call zen_common_fnc_showMessage;
+		["STR_tts_lns_moduleChangeLights_warning"] call zen_common_fnc_showMessage;
 	};
 
 	private _patternTypeValues = [];
 	{_patternTypeValues pushBack _forEachIndex;} forEach (_attachedObject getVariable ["tts_lns_patternTypes", ["Alternating", "DoubleFlash", "RapidAlt"]]);
 	[
-		"Configure Lights", // title
+		"STR_tts_lns_moduleChangeLights_title", // title
 		[ // array of controls for dialog
 			["CHECKBOX", ["Lights on", "Sets the state of the vehicle's light bar"],
 				[ // control args
@@ -21,7 +21,7 @@
 				],
 				true // force default
 			],
-			["COMBO", ["Light pattern", "Changes the pattern of the vehicle's light bar"],
+			["COMBO", ["STR_tts_lns_moduleChangeLights_lightPattern", "STR_tts_lns_moduleChangeLights_lightPattern_desc"],
 				[ // control args
 					_patternTypeValues, // return values
 					_attachedObject getVariable ["tts_lns_patternTypes", ["Alternating", "DoubleFlash", "RapidAlt"]], // labels
@@ -46,7 +46,7 @@
 
 			// set light mode
 			_attachedObject setVariable ["tts_lns_lightMode", _lightsMode, true];
-			["Lights updated!"] call zen_common_fnc_showMessage;
+			["STR_tts_lns_moduleChangeLights_completeMessage"] call zen_common_fnc_showMessage;
 
 		}, {}, [_attachedObject] // args
 	] call zen_dialog_fnc_create;

@@ -52,6 +52,10 @@ Where the first set of RGB values is the left light and the second is the right 
 ## Changelog
 Read below for complete changelog history.
 
+### 18/11/2021
+- Fixed some incorrect stringtable entries.
+- Added ACE action support.
+
 ### 14/11/2021
 - Added ZEN module icons.
 - Cleaned up ZEN functions.

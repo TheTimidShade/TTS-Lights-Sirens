@@ -2,6 +2,61 @@
 <Project name="TTS Lights + Sirens">
     <Package name="General">
     </Package>
+    </Package >
+    <Package name="Actions">
+        <Key ID="STR_tts_lns_actionCategory">
+            <Original>Lights/Siren</Original>
+            <English>Lights/Siren</English>
+        </Key>
+        <Key ID="STR_tts_lns_actionCategory_changeLights">
+            <Original>Change lights</Original>
+            <English>Change lights</English>
+        </Key>
+        <Key ID="STR_tts_lns_actionCategory_changeSiren">
+            <Original>Change siren</Original>
+            <English>Change siren</English>
+        </Key>
+        <Key ID="STR_tts_lns_action_toggleLightBar">
+            <Original>Toggle light bar</Original>
+            <English>Toggle light bar</English>
+        </Key>
+        <Key ID="STR_tts_lns_action_lightsOn">
+            <Original>Lights: On</Original>
+            <English>Lights: On</English>
+        </Key>
+        <Key ID="STR_tts_lns_action_lightsOff">
+            <Original>Lights: Off</Original>
+            <English>Lights: Off</English>
+        </Key>
+        <Key ID="STR_tts_lns_action_cycleLightPattern">
+            <Original>Cycle light bar pattern</Original>
+            <English>Cycle light bar pattern</English>
+        </Key>
+        <Key ID="STR_tts_lns_action_cycleLightMessage">
+            <Original>Light Mode:</Original>
+            <English>Light Mode:</English>
+        </Key>
+        <Key ID="STR_tts_lns_action_toggleSiren">
+            <Original>Toggle siren</Original>
+            <English>Toggle siren</English>
+        </Key>
+        <Key ID="STR_tts_lns_action_sirenOn">
+            <Original>Siren: On</Original>
+            <English>Siren: On</English>
+        </Key>
+        <Key ID="STR_tts_lns_action_sirenOff">
+            <Original>Siren: Off</Original>
+            <English>Siren: Off</English>
+        </Key>
+        <Key ID="STR_tts_lns_action_cycleSirenMode">
+            <Original>Cycle siren mode</Original>
+            <English>Cycle siren mode</English>
+        </Key>
+        <Key ID="STR_tts_lns_action_cycleSirenMessage">
+            <Original>Siren Mode:</Original>
+            <English>Siren Mode:</English>
+        </Key>
+    </Package >
     <Package name="Modules">
         <Container name="Add Siren module">
             <Key ID="STR_tts_lns_moduleAddSiren_title">
@@ -168,8 +223,8 @@
                     <English>Siren on</English>
                 </Key>
                 <Key ID="STR_tts_lns_moduleChangeSiren_sirenOn_desc">
-                    <Original>Sets the state of the vehicle's light bar</Original>
-                    <English>Sets the state of the vehicle's light bar</English>
+                    <Original>Sets the state of the vehicle's siren</Original>
+                    <English>Sets the state of the vehicle's siren</English>
                 </Key>
             </Container>
             <Container name="Siren mode param">

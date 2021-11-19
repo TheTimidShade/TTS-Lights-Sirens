@@ -47,6 +47,44 @@ ___
 - [Script version install instructions](https://github.com/TheTimidShade/Timid-Lights-Sirens/wiki/Script-version-install-instructions)
 - [Function documentation](https://github.com/TheTimidShade/Timid-Lights-Sirens/wiki/Function-documentation)
 
+### INSTALL INSTRUCTIONS
+1. Download the script files via the green 'Code' button in the top right of the repository. Extract the ZIP file somewhere easily accessible.
+2. Open your mission folder. You can do this from the 3den Editor using (Scenario > Open Scenario Folder).
+3. Copy the 'scripts' folder into your mission folder.
+4. If you do not already have a `description.ext` file in your mission, copy it into your mission folder. If you already have one, copy the contents of my `description.ext` into yours. Any 'CfgSomething' classes need to be merged together into one.
+e.g.
+```cpp
+// from TTS Cloak
+class CfgFunctions
+{
+    #include "scripts\tts_cloak\cfgFunctions.hpp"
+}
+```
+and
+```cpp
+// from TTS Beam Laser
+class CfgFunctions
+{
+    #include "scripts\tts_beam\cfgFunctions.hpp"
+}
+```
+should become
+```cpp
+// what CfgFunctions should look like when using both
+class CfgFunctions
+{
+    #include "scripts\tts_cloak\cfgFunctions.hpp"
+    #include "scripts\tts_beam\cfgFunctions.hpp"
+}
+```
+5. If you do not already have a `stringtable.xml` file in your mission, copy it into your mission folder. If you already have one, copy everything EXCEPT THE FIRST LINE from my `stringtable.xml` into yours.
+6. Done! You can now give a vehicle lights/sirens using
+```sqf
+// the last 3 params are the light bar offset, light bar width and whether or not to use the fake light bar
+[_vehicle, ["Wail", "Phaser"], ["Alternating", "RapidAlt"], ["red", "blue"], [-0.035,0.02,0.6], 0.4, false] call tts_lns_fnc_addSiren;
+```
+Alternatively, if you are using Zeus Enhanced you can do this via Zeus modules.
+
 ### **License:**
 This script is licensed under [Arma Public License No Derivatives (APL-ND)](https://www.bohemia.net/community/licenses/arma-public-license-nd). You can freely use the script in your missions, private or uploaded to the Steam Workshop but you must not use any parts of the script in another mod without my permission.
 

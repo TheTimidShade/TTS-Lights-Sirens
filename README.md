@@ -142,6 +142,10 @@ ___
 ## Changelog
 Read below for complete changelog history.
 
+### 20/11/2021
+- Added missing stringtable entries.
+- Added ships to valid vehicles list.
+
 ### 19/11/2021
 - Reworked README file.
 

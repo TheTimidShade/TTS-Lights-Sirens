@@ -238,5 +238,15 @@
                 </Key>
             </Container>
         </Container>
+        <Container name="Remove lights/siren module">
+            <Key ID="STR_tts_lns_moduleRemoveSiren_title">
+                <Original>Remove Lights/Siren</Original>
+                <English>Remove Lights/Siren</English>
+            </Key>
+        </Container>
+        <Key ID="STR_tts_lns_moduleRemoveSiren_completeMessage">
+            <Original>Removed lights/siren!</Original>
+            <English>Removed lights/siren!</English>
+        </Key>
     </Package>
 </Project>

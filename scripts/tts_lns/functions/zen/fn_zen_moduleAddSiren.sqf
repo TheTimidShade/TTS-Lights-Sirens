@@ -2,7 +2,7 @@
 {
 	params [["_position", [0,0,0], [[]], 3], ["_attachedObject", objNull, [objNull]]];
 
-	if (!alive _attachedObject || !(_attachedObject isKindOf "Air" || _attachedObject isKindOf "LandVehicle")) exitWith {
+	if (!alive _attachedObject || !(_attachedObject isKindOf "Air" || _attachedObject isKindOf "LandVehicle" || _attachedObject isKindOf "Ship")) exitWith {
 		["STR_tts_lns_moduleAddSiren_warning"] call zen_common_fnc_showMessage;
 	};
 

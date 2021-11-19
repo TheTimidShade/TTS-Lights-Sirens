@@ -1,56 +1,111 @@
-# Lights + Sirens Script
-## Overview:
-Designed for Arma 3, this script allows mission makers and Zeuses to add more sophisticated light/siren systems to vehicles. It can also be used to add a ~~pair of tent lights~~ very expensive custom light bar to vehicles that do not normally have one. The colour of the lights is customisable and multiple light patterns/sirens are available. It is also compatible with Zeus Enhanced so mission makers can use it to enhance their mission on the fly.
+# TTS Lights + Sirens
+This script allows mission makers and Zeuses to add more sophisticated light/siren systems to vehicles. When the lights are turned on, dynamic lights are created to simulate the flash from the lights which looks significantly better at night. During the day, 'sphere' objects are created along with the lights so that the lights are easily visible since light sources do not show up well in bright lighting. When the siren is turned on, the siren sound effect will play on loop until it is turned off. The light pattern and siren tone can be changed through the action menu (ACE interaction if using ACE). Light colours and siren tones can be customised for individual vehicles.
 
-## Features:
+You can see the script in action in this [demo video]() or if you'd like to test the script for yourself, you can try out the [demo mission]().
+
+This is the script version, a [mod version]() is also available on the Steam Workshop.
+
+### Features:
 - Lights/sirens can be added to any vehicle
 - Customisable light colour/siren sound
 - Light pattern and siren type can be changed through the action menu
-- Light/siren can be turned on via script/Zeus to support non-player vehicles
+- Lights/siren can be turned on via script/Zeus to support non-player vehicles
 - Designed for multiplayer and tested on dedicated server
 - Compatible with ACE
-- Compatible with Zeus Enhanced
+- Useable from Zeus via [Zeus Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=1779063631)
 - Editor modules to simplify usage (*Mod version only*!)
 
-You will not be able to use this script from Zeus unless Zeus Enhanced is loaded.
+**ZEN Modules**:
+- Add Lights/Siren
+- Change Lights
+- Change Siren
+- Remove Lights/Siren
 
-The provided light colours are:
+**Editor Modules (MOD VERSION ONLY):**
+
+**For help with troubleshooting, questions or feedback, join my [Discord](https://discord.gg/8Y2ENWQMpK)**
+
+___
+
+The available light colours are:
 - Red
 - Blue
-- Amber
+- Amber/Orange
 - Yellow
 - Green
 - White
 - Magenta/Purple  
 
-(Based on common colours for emergency/utility vehicles https://en.wikipedia.org/wiki/Emergency_vehicle_lighting)  
+Based on common light colours for emergency/utility vehicles according to [Wikipedia](https://en.wikipedia.org/wiki/Emergency_vehicle_lighting).  
 
-Provided light patterns are 'Alternating', 'DoubleFlash' and 'RapidAlt'.
+The available light patterns are 'Alternating', 'DoubleFlash' and 'RapidAlt'.  
+The available siren types are 'Wail', 'Yelp', 'Phaser' and 'TwoTone'.
 
-Provided siren types are 'Wail', 'Yelp' and 'Phaser'.
+___
 
-Demo Video: N/A  
-Steam Workshop page: N/A  
-Zeus Enhanced: https://steamcommunity.com/sharedfiles/filedetails/?id=1779063631  
+### **More information:**
+- [Script version install instructions](https://github.com/TheTimidShade/Timid-Lights-Sirens/wiki/Script-version-install-instructions)
+- [Function documentation](https://github.com/TheTimidShade/Timid-Lights-Sirens/wiki/Function-documentation)
 
-***
+### **License:**
+This script is licensed under [Arma Public License No Derivatives (APL-ND)](https://www.bohemia.net/community/licenses/arma-public-license-nd). You can freely use the script in your missions, private or uploaded to the Steam Workshop but you must not use any parts of the script in another mod without my permission.
 
-If you really want to use a different colour to what is provided you can overwrite this colour using:
+### **Supported Languages:**
+- English 
+
+If you'd like to translate the script into a different language, contact me via my Discord or create a pull request.
+
+### **Credits:**
+- Members of the [Task Force Dingo](taskforcedingo.com) community who helped test the script in multiplayer and provided the dedicated server used for testing.
+
+___
+
+
+### **Examples:**  
+Add lights/siren to vehicle:
 ```sqf
-vehicle setVariable ["tts_lns_lightBarColours", [[R,G,B], [R,G,B]], true];
+[_vehicle, ["Wail", "Phaser"], ["Alternating", "RapidAlt"], ["red", "blue"], [-0.035,0.02,0.6], 0.4, false] call tts_lns_fnc_addSiren;
 ```
-Where the first set of RGB values is the left light and the second is the right light. R/G/B value must be from 0-1, so divide by 255 if you are converting from a format like [51, 102, 204]. You might notice excessive brightness if you don't do this.
+Manage lights via script:
+```sqf
+// lights on
+if (isServer) then {
+    [_vehicle] remoteExec ["tts_lns_fnc_turnLightsOn", 0, false];
+};
 
-**NOTE**: This won't work for the fake light bar since it uses premade textures for the provided colours so it will probably error if you try it.
+// lights off
+_vehicle setVariable ["tts_lns_lightsOn", false, true];
 
-## Setup/Use:
-1. Download files from repository.
-2. Excluding `README.md`, move files into your mission folder and merge `description.ext` and `init.sqf` with your existing files (if you have them).
-3. Set up vehicles with sirens/lights in `init.sqf` (see example `init.sqf`) OR apply using Zeus (requires Zeus Enhanced).
+// change lights
+// changes lights to mode 1 (second mode in light pattern array for this vehicle)
+_vehicle setVariable ["tts_lns_lightMode", 1, true];
+```
+Manage siren via script:
+```sqf
+// siren on
+if (isServer) then {
+    [_vehicle] remoteExec ["tts_lns_fnc_turnSirenOn", 0, false];
+};
 
+// siren off
+_vehicle setVariable ["tts_lns_sirenOn", false, true];
+
+// change siren
+// changes siren to tone 1 (second tone in siren types array for this vehicle)
+_vehicle setVariable ["tts_lns_sirenMode", 2, true];
+```
+Remove lights/siren:
+```sqf
+[_vehicle] call tts_lns_fnc_removeSiren;
+```
+
+___
 
 ## Changelog
 Read below for complete changelog history.
+
+### 19/11/2021
+- Reworked README file.
 
 ### 18/11/2021
 - Fixed some incorrect stringtable entries.

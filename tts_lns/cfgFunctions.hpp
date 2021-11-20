@@ -27,4 +27,9 @@ class tts_lns
 		class zen_moduleChangeLights {};
 		class zen_moduleChangeSiren {};
 	};
+	class modules
+	{
+		file = "\tts_lns\functions\modules";
+		class moduleAddSiren {};
+	};
 };

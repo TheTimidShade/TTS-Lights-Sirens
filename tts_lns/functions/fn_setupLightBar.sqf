@@ -33,7 +33,7 @@ private _leftColourTexture = format ["#(argb,8,8,3)color(%1,%2,%3,0.2,ca)", (_rg
 _leftLight attachTo [_vehicle, [_lightBarOffset#0 - _lightOffset, _lightBarOffset#1, _lightBarOffset#2-0.06]];
 _leftLight setVectorDirAndUp [[1,0,0], [0,-1,0]];
 for "_i" from 5 to 1 step -1 do {_leftLight setHit [format["light_%1_hitpoint",_i],1];}; // disable lamp light
-_leftLight setObjectTextureGlobal [0, "scripts\tts_lns\textures\lamp_" + _lightBarColours#0 + ".paa"];
+_leftLight setObjectTextureGlobal [0, "\tts_lns\textures\lamp_" + _lightBarColours#0 + ".paa"];
 _leftLight setObjectTextureGlobal [1, _leftColourTexture];
 _leftLight allowDamage false;
 
@@ -42,7 +42,7 @@ private _rightColourTexture = format ["#(argb,8,8,3)color(%1,%2,%3,0.2,ca)", (_r
 _rightLight attachTo [_vehicle, [_lightBarOffset#0 + _lightOffset, _lightBarOffset#1, _lightBarOffset#2-0.06]];
 _rightLight setVectorDirAndUp [[1,0,0], [0,-1,0]];
 for "_i" from 5 to 1 step -1 do {_rightLight setHit [format["light_%1_hitpoint",_i],1];}; // disable lamp light
-_rightLight setObjectTextureGlobal [0, "scripts\tts_lns\textures\lamp_" + _lightBarColours#1 + ".paa"];
+_rightLight setObjectTextureGlobal [0, "\tts_lns\textures\lamp_" + _lightBarColours#1 + ".paa"];
 _rightLight setObjectTextureGlobal [1, _rightColourTexture];
 _rightLight allowDamage false;
 

@@ -12,4 +12,4 @@
 		[_attachedObject] remoteExecCall ["tts_lns_fnc_removeSiren", 2];
 		["STR_tts_lns_moduleRemoveSiren_completeMessage"] call zen_common_fnc_showMessage;
 	};
-}, "scripts\tts_lns\icons\lns_remove_icon_64px.paa"] call zen_custom_modules_fnc_register;
+}, "\tts_lns\icons\lns_remove_icon_64px.paa"] call zen_custom_modules_fnc_register;

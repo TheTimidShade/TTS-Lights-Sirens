@@ -71,4 +71,4 @@
 			["STR_tts_lns_moduleAddSiren_completeMessage"] call zen_common_fnc_showMessage;
 		}, {}, [_attachedObject] // args
 	] call zen_dialog_fnc_create;
-}, "scripts\tts_lns\icons\lns_icon_64px.paa"] call zen_custom_modules_fnc_register;
+}, "\tts_lns\icons\lns_icon_64px.paa"] call zen_custom_modules_fnc_register;

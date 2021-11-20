@@ -50,4 +50,4 @@
 
 		}, {}, [_attachedObject] // args
 	] call zen_dialog_fnc_create;
-}, "scripts\tts_lns\icons\lns_edit_light_icon_64px.paa"] call zen_custom_modules_fnc_register;
+}, "\tts_lns\icons\lns_edit_light_icon_64px.paa"] call zen_custom_modules_fnc_register;

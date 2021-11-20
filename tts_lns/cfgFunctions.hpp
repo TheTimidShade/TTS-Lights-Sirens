@@ -31,5 +31,6 @@ class tts_lns
 	{
 		file = "\tts_lns\functions\modules";
 		class moduleAddSiren {};
+		class moduleSetSirenState {};
 	};
 };

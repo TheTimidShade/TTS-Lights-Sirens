@@ -5,3 +5,4 @@ Read below for complete changelog history.
 - Created repository.
 - Added offset presets.
 - Added 'Add Lights/Siren' editor module.
+- Added 'Set Light/Siren State' editor module.

@@ -37,18 +37,23 @@
 				],
 				false // force default
 			],
-			["EDIT", ["STR_tts_lns_moduleAddSiren_lightBarOffset", "STR_tts_lns_moduleAddSiren_lightBarOffset_desc"],
+			["COMBO", ["STR_tts_lns_moduleAddSiren_preset", "STR_tts_lns_moduleAddSiren_preset_desc"],
 				[ // control args
-					str [-0.035,0.02,0.6]
+					["None", "Offroad", "Van", "Hatchback", "Hunter", "Ifrit"], // return values
+					["STR_tts_lns_moduleAddSiren_preset_none", "STR_tts_lns_moduleAddSiren_preset_offroad", "STR_tts_lns_moduleAddSiren_preset_van", "STR_tts_lns_moduleAddSiren_preset_hatchback", "STR_tts_lns_moduleAddSiren_preset_hunter", "STR_tts_lns_moduleAddSiren_preset_ifrit"], // labels
+					0 
 				],
 				false // force default
 			],
-			["SLIDER", ["STR_tts_lns_moduleAddSiren_lightCentreOffset", "STR_tts_lns_moduleAddSiren_lightCentreOffset_desc"],
+			["EDIT", ["STR_tts_lns_moduleAddSiren_lightBarOffset", "STR_tts_lns_moduleAddSiren_lightBarOffset_desc"],
 				[ // control args
-					0, // min
-					10, // max
-					0.4, // default
-					2 // 2 decimal places
+					"[-0.035,0.02,0.6]"
+				],
+				false // force default
+			],
+			["EDIT", ["STR_tts_lns_moduleAddSiren_lightCentreOffset", "STR_tts_lns_moduleAddSiren_lightCentreOffset_desc"],
+				[ // control args
+					"0.4"
 				],
 				false // force default
 			],
@@ -62,10 +67,16 @@
 		{ // code run on dialog closed (only run if OK is clicked)
 			params ["_dialogResult", "_args"];
 			_args params ["_attachedObject"];
-			_dialogResult params ["_sirenTypes", "_patternTypes", "_leftColour", "_rightColour", "_lightBarOffset", "_lightCentreOffset", "_fakeLightBar"];
+			
+			_dialogResult params ["_sirenTypes", "_patternTypes", "_leftColour", "_rightColour", "_preset", "_lightBarOffset", "_lightCentreOffset", "_fakeLightBar"];
 			_sirenTypes = _sirenTypes splitString ",";
 			_patternTypes = _patternTypes splitString ",";
-			_lightBarOffset = parseSimpleArray _lightBarOffset;
+			
+			if (_preset != "None") then {
+				private _parsedOffset = [_preset, _preset] call tts_lns_fnc_parsePresets;
+				_lightBarOffset = _parsedOffset#0;
+				_lightCentreOffset = _parsedOffset#1;
+			};
 
 			[_attachedObject, _sirenTypes, _patternTypes, [_leftColour, _rightColour], _lightBarOffset, _lightCentreOffset, _fakeLightBar] remoteExecCall ["tts_lns_fnc_addSiren", 2];
 			["STR_tts_lns_moduleAddSiren_completeMessage"] call zen_common_fnc_showMessage;

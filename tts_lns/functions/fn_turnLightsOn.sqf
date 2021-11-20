@@ -18,6 +18,7 @@ params [
 
 if (!hasInterface) exitWith {};
 if (!alive _vehicle) exitWith {};
+if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) exitWith {};
 
 // set up lights/objects/variables
 private _patternTypes = _vehicle getVariable ["tts_lns_patternTypes", ["Alternating"]];

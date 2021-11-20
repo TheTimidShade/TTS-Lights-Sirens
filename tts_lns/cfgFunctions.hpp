@@ -2,7 +2,7 @@ class tts_lns
 {
 	class lns
 	{
-		file = "tts_lns\functions";
+		file = "\tts_lns\functions";
 		class init { postInit = 1; };
 		class addSiren {};
 		class removeSiren {};
@@ -16,10 +16,11 @@ class tts_lns
 		class handleLightBarCleanup {};
 		class flashLight {};
 		class createLightObjects {};
+		class parsePresets {};
 	};
 	class zen
 	{
-		file = "tts_lns\functions\zen";
+		file = "\tts_lns\functions\zen";
 		class initCustomModules {};
 		class zen_moduleAddSiren {};
 		class zen_moduleRemoveSiren {};

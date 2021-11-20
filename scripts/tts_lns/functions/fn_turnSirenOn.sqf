@@ -17,7 +17,8 @@ params [
 ];
 
 if (!hasInterface) exitWith {};
-if (isNull _vehicle) exitWith {};
+if (!alive _vehicle) exitWith {};
+if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) exitWith {};
 
 private _lightBarOffset = _vehicle getVariable ["tts_lns_lightBarOffset", [-0.035,0.02,0.6]];
 

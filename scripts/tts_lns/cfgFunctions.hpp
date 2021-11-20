@@ -16,6 +16,7 @@ class tts_lns
 		class handleLightBarCleanup {};
 		class flashLight {};
 		class createLightObjects {};
+		class parsePresets {};
 	};
 	class zen
 	{

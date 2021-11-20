@@ -143,14 +143,48 @@
                     <English>Colour of the right light in the light bar</English>
                 </Key>
             </Container>
+            <Container name="Preset param">
+                <Key ID="STR_tts_lns_moduleAddSiren_preset">
+                    <Original>Offset preset</Original>
+                    <English>Offset preset</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_preset_desc">
+                    <Original>Preset used for light bar offset and light centre offset\nThe two parameters below this will only take effect if this is set to 'None'</Original>
+                    <English>Preset used for light bar offset and light centre offset\nThe two parameters below this will only take effect if this is set to 'None'</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_preset_none">
+                    <Original>None</Original>
+                    <English>None</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_preset_offroad">
+                    <Original>Offroad</Original>
+                    <English>Offroad</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_preset_van">
+                    <Original>Van</Original>
+                    <English>Van</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_preset_hatchback">
+                    <Original>Hatchback</Original>
+                    <English>Hatchback</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_preset_hunter">
+                    <Original>Hunter</Original>
+                    <English>Hunter</English>
+                </Key>
+                <Key ID="STR_tts_lns_moduleAddSiren_preset_ifrit">
+                    <Original>Ifrit</Original>
+                    <English>Ifrit</English>
+                </Key>
+            </Container>
             <Container name="Light bar offset param">
                 <Key ID="STR_tts_lns_moduleAddSiren_lightBarOffset">
                     <Original>Light bar offset</Original>
                     <English>Light bar offset</English>
                 </Key>
                 <Key ID="STR_tts_lns_moduleAddSiren_lightBarOffset_desc">
-                    <Original>The offset (in m) from the vehicle's position the light bar is attached</Original>
-                    <English>The offset (in m) from the vehicle's position the light bar is attached</English>
+                    <Original>The offset (in m) from the vehicle's position the light bar is attached\nMust be an array ([x,y,z]) or preset string (e.g. "Offroad")</Original>
+                    <English>The offset (in m) from the vehicle's position the light bar is attached\nMust be an array ([x,y,z]) or preset string (e.g. "Offroad")</English>
                 </Key>
             </Container>
             <Container name="Light centre offset param">
@@ -159,8 +193,8 @@
                     <English>Light centre offset</English>
                 </Key>
                 <Key ID="STR_tts_lns_moduleAddSiren_lightCentreOffset_desc">
-                    <Original>The horizontal offset (in m) from the light bar the light points are created</Original>
-                    <English>The horizontal offset (in m) from the light bar the light points are created</English>
+                    <Original>The horizontal offset (in m) from the light bar the light points are created\nMust be a number or preset string (e.g. "Offroad")</Original>
+                    <English>The horizontal offset (in m) from the light bar the light points are created\nMust be a number or preset string (e.g. "Offroad")</English>
                 </Key>
             </Container>
             <Container name="Use fake lightbar param">

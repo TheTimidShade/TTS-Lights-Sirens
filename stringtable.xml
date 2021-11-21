@@ -240,6 +240,10 @@
                     <Original>Changes the pattern of the vehicle's light bar</Original>
                     <English>Changes the pattern of the vehicle's light bar</English>
                 </Key>
+                <Key ID="STR_tts_lns_moduleChangeLights_lightPattern_desc_alt">
+                    <Original>Changes the pattern of the vehicle's light bar\nValue must be the index of the pattern in the vehicle's light pattern array</Original>
+                    <English>Changes the pattern of the vehicle's light bar\nValue must be the index of the pattern in the vehicle's light pattern array</English>
+                </Key>
             </Container>
         </Container>
         <Container name="Change siren module">
@@ -270,6 +274,10 @@
                     <Original>Changes the mode of the vehicle's siren</Original>
                     <English>Changes the mode of the vehicle's siren</English>
                 </Key>
+                <Key ID="STR_tts_lns_moduleChangeSirens_sirenMode_desc_alt">
+                    <Original>Changes the mode of the vehicle's siren\nValue must be the index of the siren tone in the vehicle's siren tone array</Original>
+                    <English>Changes the mode of the vehicle's siren\nValue must be the index of the siren tone in the vehicle's siren tone array</English>
+                </Key>
             </Container>
         </Container>
         <Container name="Remove lights/siren module">
@@ -277,10 +285,20 @@
                 <Original>Remove Lights/Siren</Original>
                 <English>Remove Lights/Siren</English>
             </Key>
+            <Key ID="STR_tts_lns_moduleRemoveSiren_completeMessage">
+                <Original>Removed lights/siren!</Original>
+                <English>Removed lights/siren!</English>
+            </Key>
         </Container>
-        <Key ID="STR_tts_lns_moduleRemoveSiren_completeMessage">
-            <Original>Removed lights/siren!</Original>
-            <English>Removed lights/siren!</English>
-        </Key>
+        <Container name="Set siren state module">
+            <Key ID="STR_tts_lns_moduleSetSirenState_title">
+                <Original>Set Light/Siren State</Original>
+                <English>Set Light/Siren State</English>
+            </Key>
+            <Key ID="STR_tts_lns_moduleSetSirenState_desc">
+                <Original>Sets the state of the synced vehicle's light bar/siren.</Original>
+                <English>Sets the state of the synced vehicle's light bar/siren.</English>
+            </Key>
+        </Container>
     </Package>
 </Project>

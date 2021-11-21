@@ -22,6 +22,8 @@ This is the script version, a [mod version]() is also available on the Steam Wor
 - Remove Lights/Siren
 
 **Editor Modules (MOD VERSION ONLY):**
+- Add Lights/Siren
+- Set Light/Siren State
 
 **For help with troubleshooting, questions or feedback, join my [Discord](https://discord.gg/8Y2ENWQMpK)**
 
@@ -243,6 +245,9 @@ ___
 
 ## Changelog
 Read below for complete changelog history.
+
+### 21/11/2021
+- Updated stringtable with editor module entries.
 
 ### 20/11/2021
 - Added missing stringtable entries.

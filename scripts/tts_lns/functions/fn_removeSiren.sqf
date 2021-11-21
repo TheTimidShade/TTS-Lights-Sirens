@@ -1,19 +1,19 @@
 /*
-	Author: TheTimidShade
+    Author: TheTimidShade
 
-	Description:
-		Removes light bar and siren from provided vehicle (if it has them)
+    Description:
+        Removes light bar and siren from provided vehicle (if it has them)
 
-	Parameters:
-		0: OBJECT - Vehicle to remove lights/siren from
+    Parameters:
+        0: OBJECT - Vehicle to remove lights/siren from
 
-	Returns:
-		NOTHING
+    Returns:
+        NOTHING
 
 */
 
 params [
-	["_vehicle", objNull, [objNull]]
+    ["_vehicle", objNull, [objNull]]
 ];
 
 if (!isServer) exitWith {};

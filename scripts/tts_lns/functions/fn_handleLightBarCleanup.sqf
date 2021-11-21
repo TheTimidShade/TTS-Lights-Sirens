@@ -1,19 +1,19 @@
 /*
-	Author: TheTimidShade
+    Author: TheTimidShade
 
-	Description:
-		Executed on server, waits until vehicle with light bar attached no longer exists then deletes them
+    Description:
+        Executed on server, waits until vehicle with light bar attached no longer exists then deletes them
 
-	Parameters:
-		0: OBJECT - Vehicle light bar is attached to
+    Parameters:
+        0: OBJECT - Vehicle light bar is attached to
 
-	Returns:
-		NOTHING
+    Returns:
+        NOTHING
 
 */
 
 params [
-	["_vehicle", objNull, [objNull]]
+    ["_vehicle", objNull, [objNull]]
 ];
 
 if (isNull _vehicle) exitWith {};

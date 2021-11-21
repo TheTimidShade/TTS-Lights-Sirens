@@ -1,19 +1,19 @@
 /*
-	Author: TheTimidShade
+    Author: TheTimidShade
 
-	Description:
-		Handles light/siren status for JIP players
+    Description:
+        Handles light/siren status for JIP players
 
-	Parameters:
-		0: OBJECT - Vehicle to check for status
+    Parameters:
+        0: OBJECT - Vehicle to check for status
 
-	Returns:
-		NOTHING
+    Returns:
+        NOTHING
 
 */
 
 params [
-	["_vehicle", objNull, [objNull]]
+    ["_vehicle", objNull, [objNull]]
 ];
 
 if (isNull _vehicle) exitWith {};

@@ -1,25 +1,25 @@
 /*
-	Author: TheTimidShade
+    Author: TheTimidShade
 
-	Description:
-		Sets up vehicle light bar using the passed parameters
+    Description:
+        Sets up vehicle light bar using the passed parameters
 
-	Parameters:
-		0: OBJECT - Vehicle to add light bar to
-		1: ARRAY - Array of light colours in format [_leftLightColour, _rightLightColour]. Default: [[1,0,0], [0,0,1]]
-		2: ARRAY - Offset position of light bar placement on vehicle
-		3: NUMBER - Offset of light bar light points from model centre pos
+    Parameters:
+        0: OBJECT - Vehicle to add light bar to
+        1: ARRAY - Array of light colours in format [_leftLightColour, _rightLightColour]. Default: [[1,0,0], [0,0,1]]
+        2: ARRAY - Offset position of light bar placement on vehicle
+        3: NUMBER - Offset of light bar light points from model centre pos
 
-	Returns:
-		NOTHING
+    Returns:
+        NOTHING
 
 */
 
 params [
-	["_vehicle", objNull, [objNull]],
-	["_lightBarColours", ["red", "blue"], [[]], [2]],
-	["_lightBarOffset", [-0.035,0.02,0.6], [[]], [3]],
-	["_lightOffset", 0.4, [0]]
+    ["_vehicle", objNull, [objNull]],
+    ["_lightBarColours", ["red", "blue"], [[]], [2]],
+    ["_lightBarOffset", [-0.035,0.02,0.6], [[]], [3]],
+    ["_lightOffset", 0.4, [0]]
 ];
 
 if (!isServer) exitWith {};

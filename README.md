@@ -137,7 +137,8 @@ Example:
 ```sqf
 // turn lights on
 if (isServer) then {
-    [ambulance] remoteExec ["tts_lns_fnc_turnLightsOn", 0, false];
+    ambulance setVariable ["tts_lns_lightsOn", true, true]; // turn lights on
+    [ambulance] remoteExec ["tts_lns_fnc_turnLightsOn", 0, false]; // start effect
 };
 
 // turn lights off
@@ -162,7 +163,8 @@ Example:
 ```sqf
 // turn siren on
 if (isServer) then {
-    [ambulance] remoteExec ["tts_lns_fnc_turnSirenOn", 0, false];
+    ambulance setVariable ["tts_lns_sirenOn", true, true]; // turn siren on
+    [ambulance] remoteExec ["tts_lns_fnc_turnSirenOn", 0, false]; // play siren effect
 };
 
 // turn siren off
@@ -212,7 +214,8 @@ Manage lights via script:
 ```sqf
 // lights on
 if (isServer) then {
-    [_vehicle] remoteExec ["tts_lns_fnc_turnLightsOn", 0, false];
+    _vehicle setVariable ["tts_lns_lightsOn", true, true]; // turn lights on
+    [_vehicle] remoteExec ["tts_lns_fnc_turnLightsOn", 0, false]; // start effect
 };
 
 // lights off
@@ -226,7 +229,8 @@ Manage siren via script:
 ```sqf
 // siren on
 if (isServer) then {
-    [_vehicle] remoteExec ["tts_lns_fnc_turnSirenOn", 0, false];
+    _vehicle setVariable ["tts_lns_sirenOn", true, true]; // turn siren on
+    [_vehicle] remoteExec ["tts_lns_fnc_turnSirenOn", 0, false]; // play siren effect
 };
 
 // siren off
@@ -245,6 +249,10 @@ ___
 
 ## Changelog
 Read below for complete changelog history.
+
+### 22/11/2021
+- Adjusted light point settings.
+- Adjusted light intensity.
 
 ### 21/11/2021
 - Updated stringtable with editor module entries.

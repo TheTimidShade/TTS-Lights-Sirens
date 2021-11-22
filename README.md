@@ -1,6 +1,11 @@
 ## Changelog
 Read below for complete changelog history.
 
+### 22/11/2021
+Applied changes from script version:
+- Adjusted light point settings.
+- Adjusted light intensity.
+
 ### 21/11/2021
 Applied changes from script version:
 - Increased light flare distance to 3km.

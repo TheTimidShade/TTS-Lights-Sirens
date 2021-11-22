@@ -25,7 +25,7 @@ if (isNull _light || isNull _sphere) exitWith {};
 
 if (_on) then
 {
-    _light setLightIntensity 150;
+    _light setLightIntensity 100;
     if (sunOrMoon > 0) then {_sphere hideObject false;};
 }
 else 

@@ -27,7 +27,7 @@ private _lightOffset = _vehicle getVariable ["tts_lns_lightOffset", 0.4];
 
 private _leftLight = "#lightpoint" createVehicleLocal (getPosATL _vehicle);
 _leftLight setLightIntensity 0;
-_leftLight setLightAttenuation [0, 4, 0.1, 0.001, 5];
+_leftLight setLightAttenuation [2, 0, 0, 0.003];
 _leftLight setLightUseFlare true;
 _leftLight setLightFlareSize 1;
 _leftLight setLightFlareMaxDistance 3000;
@@ -45,7 +45,7 @@ _returnValues pushBack _leftSphere;
 
 private _rightLight = "#lightpoint" createVehicleLocal (getPosATL _vehicle);
 _rightLight setLightIntensity 0;
-_rightLight setLightAttenuation [0, 4, 0.1, 0.001, 5];
+_rightLight setLightAttenuation [2, 0, 0, 0.003];
 _rightLight setLightUseFlare true;
 _rightLight setLightFlareSize 1;
 _rightLight setLightFlareMaxDistance 3000;

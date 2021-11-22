@@ -1,7 +1,7 @@
 # TTS Lights + Sirens
 This script allows mission makers and Zeuses to add more sophisticated light/siren systems to vehicles. When the lights are turned on, dynamic lights are created to simulate the flash from the lights which looks significantly better at night. During the day, 'sphere' objects are created along with the lights so that the lights are easily visible since light sources do not show up well in bright lighting. When the siren is turned on, the siren sound effect will play on loop until it is turned off. The light pattern and siren tone can be changed through the action menu (ACE interaction if using ACE). Light colours and siren tones can be customised for individual vehicles.
 
-You can see the script in action in this [demo video]() or if you'd like to test the script for yourself, you can try out the [demo mission]().
+You can see the script in action in this [demo video](https://youtu.be/EXLUBDblfe8) or if you'd like to test the script for yourself, you can try out the [demo mission]().
 
 This is the script version, a [mod version]() is also available on the Steam Workshop.
 

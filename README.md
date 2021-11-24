@@ -46,8 +46,8 @@ The available siren types are 'Wail', 'Yelp', 'Phaser' and 'TwoTone'.
 ___
 
 ### **More information:**
-- [Script version install instructions](https://github.com/TheTimidShade/Timid-Lights-Sirens/wiki/Script-version-install-instructions)
-- [Function documentation](https://github.com/TheTimidShade/Timid-Lights-Sirens/wiki/Function-documentation)
+- [Script version install instructions](https://github.com/TheTimidShade/TTS-Lights-Sirens/wiki/Script-version-install-instructions)
+- [Function documentation](https://github.com/TheTimidShade/TTS-Lights-Sirens/wiki/Function-documentation)
 
 ### **License:**
 This script is licensed under [Arma Public License No Derivatives (APL-ND)](https://www.bohemia.net/community/licenses/arma-public-license-nd). You can freely use the script in your missions, private or uploaded to the Steam Workshop but you must not use any parts of the script in another mod without my permission.

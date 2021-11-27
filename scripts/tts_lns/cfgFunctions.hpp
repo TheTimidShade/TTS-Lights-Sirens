@@ -24,7 +24,6 @@ class tts_lns
         class initCustomModules {};
         class zen_moduleAddSiren {};
         class zen_moduleRemoveSiren {};
-        class zen_moduleChangeLights {};
-        class zen_moduleChangeSiren {};
+        class zen_moduleChangeLightsSiren {};
     };
 };

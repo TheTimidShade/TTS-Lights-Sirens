@@ -208,73 +208,63 @@
                 </Key>
             </Container>
         </Container>
-        <Container name="Change lights module">
-            <Key ID="STR_tts_lns_moduleChangeLights_title">
-                <Original>Change Lights</Original>
-                <English>Change Lights</English>
+        <Container name="Change lights/siren module">
+            <Key ID="STR_tts_lns_moduleChangeLightsSiren_title">
+                <Original>Change Lights/Siren</Original>
+                <English>Change Lights/Siren</English>
             </Key>
-            <Key ID="STR_tts_lns_moduleChangeLights_warning">
+            <Key ID="STR_tts_lns_moduleChangeLightsSiren_warning">
                 <Original>No lights/siren detected on this vehicle!</Original>
                 <English>No lights/siren detected on this vehicle!</English>
             </Key>
-            <Key ID="STR_tts_lns_moduleChangeLights_completeMessage">
-                <Original>Lights updated!</Original>
-                <English>Lights updated!</English>
+            <Key ID="STR_tts_lns_moduleChangeLightsSiren_completeMessage">
+                <Original>Lights/siren updated!</Original>
+                <English>Lights/siren updated!</English>
             </Key>
             <Container name="Lights on param">
-                <Key ID="STR_tts_lns_moduleChangeLights_lightsOn">
+                <Key ID="STR_tts_lns_moduleChangeLightsSiren_lightsOn">
                     <Original>Lights on</Original>
                     <English>Lights on</English>
                 </Key>
-                <Key ID="STR_tts_lns_moduleChangeLights_lightsOn_desc">
+                <Key ID="STR_tts_lns_moduleChangeLightsSiren_lightsOn_desc">
                     <Original>Sets the state of the vehicle's light bar</Original>
                     <English>Sets the state of the vehicle's light bar</English>
                 </Key>
             </Container>
             <Container name="Light pattern param">
-                <Key ID="STR_tts_lns_moduleChangeLights_lightPattern">
+                <Key ID="STR_tts_lns_moduleChangeLightsSiren_lightPattern">
                     <Original>Light pattern</Original>
                     <English>Light pattern</English>
                 </Key>
-                <Key ID="STR_tts_lns_moduleChangeLights_lightPattern_desc">
+                <Key ID="STR_tts_lns_moduleChangeLightsSiren_lightPattern_desc">
                     <Original>Changes the pattern of the vehicle's light bar</Original>
                     <English>Changes the pattern of the vehicle's light bar</English>
                 </Key>
-                <Key ID="STR_tts_lns_moduleChangeLights_lightPattern_desc_alt">
+                <Key ID="STR_tts_lns_moduleChangeLightsSiren_lightPattern_desc_alt">
                     <Original>Changes the pattern of the vehicle's light bar\nValue must be the index of the pattern in the vehicle's light pattern array</Original>
                     <English>Changes the pattern of the vehicle's light bar\nValue must be the index of the pattern in the vehicle's light pattern array</English>
                 </Key>
             </Container>
-        </Container>
-        <Container name="Change siren module">
-            <Key ID="STR_tts_lns_moduleChangeSiren_title">
-                <Original>Change Siren</Original>
-                <English>Change Siren</English>
-            </Key>
-            <Key ID="STR_tts_lns_moduleChangeSiren_completeMessage">
-                <Original>Siren updated!</Original>
-                <English>Siren updated!</English>
-            </Key>
             <Container name="Siren on param">
-                <Key ID="STR_tts_lns_moduleChangeSiren_sirenOn">
+                <Key ID="STR_tts_lns_moduleChangeLightsSiren_sirenOn">
                     <Original>Siren on</Original>
                     <English>Siren on</English>
                 </Key>
-                <Key ID="STR_tts_lns_moduleChangeSiren_sirenOn_desc">
+                <Key ID="STR_tts_lns_moduleChangeLightsSiren_sirenOn_desc">
                     <Original>Sets the state of the vehicle's siren</Original>
                     <English>Sets the state of the vehicle's siren</English>
                 </Key>
             </Container>
             <Container name="Siren mode param">
-                <Key ID="STR_tts_lns_moduleChangeSirens_sirenMode">
+                <Key ID="STR_tts_lns_moduleChangeLightsSiren_sirenMode">
                     <Original>Siren mode</Original>
                     <English>Siren mode</English>
                 </Key>
-                <Key ID="STR_tts_lns_moduleChangeSirens_sirenMode_desc">
+                <Key ID="STR_tts_lns_moduleChangeLightsSiren_sirenMode_desc">
                     <Original>Changes the mode of the vehicle's siren</Original>
                     <English>Changes the mode of the vehicle's siren</English>
                 </Key>
-                <Key ID="STR_tts_lns_moduleChangeSirens_sirenMode_desc_alt">
+                <Key ID="STR_tts_lns_moduleChangeLightsSiren_sirenMode_desc_alt">
                     <Original>Changes the mode of the vehicle's siren\nValue must be the index of the siren tone in the vehicle's siren tone array</Original>
                     <English>Changes the mode of the vehicle's siren\nValue must be the index of the siren tone in the vehicle's siren tone array</English>
                 </Key>

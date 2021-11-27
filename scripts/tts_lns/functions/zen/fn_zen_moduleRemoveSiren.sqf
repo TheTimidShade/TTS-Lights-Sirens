@@ -7,7 +7,7 @@
     };
 
     if (!(_attachedObject getVariable ["tts_lns_hasSiren", false])) then {
-        ["STR_tts_lns_moduleChangeLights_warning"] call zen_common_fnc_showMessage;
+        ["STR_tts_lns_moduleChangeLightsSiren_warning"] call zen_common_fnc_showMessage;
     } else {
         [_attachedObject] remoteExecCall ["tts_lns_fnc_removeSiren", 2];
         ["STR_tts_lns_moduleRemoveSiren_completeMessage"] call zen_common_fnc_showMessage;

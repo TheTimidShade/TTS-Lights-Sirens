@@ -17,8 +17,7 @@ This is the script version, a [mod version](https://steamcommunity.com/sharedfil
 
 **ZEN Modules**:
 - Add Lights/Siren
-- Change Lights
-- Change Siren
+- Change Lights/Siren
 - Remove Lights/Siren
 
 **Editor Modules (MOD VERSION ONLY):**
@@ -107,6 +106,9 @@ ___
 
 ## Changelog
 Read below for complete changelog history.
+
+### 27/11/2021
+- Merged 'Change Lights' and 'Change Siren' ZEN module.
 
 ### 22/11/2021
 - Adjusted light point settings.

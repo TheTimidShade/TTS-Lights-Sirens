@@ -147,29 +147,29 @@ class CfgVehicles {
         class Attributes : AttributesBase {
             class LightsOn : Checkbox {
                 property = "tts_lns_moduleSetSirenState_LightsOn";
-                displayName = "$STR_tts_lns_moduleChangeLights_lightsOn";
-                tooltip = "$STR_tts_lns_moduleChangeLights_lightsOn_desc";
+                displayName = "$STR_tts_lns_moduleChangeLightsSiren_lightsOn";
+                tooltip = "$STR_tts_lns_moduleChangeLightsSiren_lightsOn_desc";
                 typeName = "BOOL";
                 defaultValue = "false";
             };
             class LightMode : Edit {
                 property = "tts_lns_moduleSetSirenState_LightMode";
-                displayName = "$STR_tts_lns_moduleChangeLights_lightPattern";
-                tooltip = "$STR_tts_lns_moduleChangeLights_lightPattern_desc_alt";
+                displayName = "$STR_tts_lns_moduleChangeLightsSiren_lightPattern";
+                tooltip = "$STR_tts_lns_moduleChangeLightsSiren_lightPattern_desc_alt";
                 typeName = "NUMBER";
                 defaultValue = "0";
             };
             class SirenOn : Checkbox {
                 property = "tts_lns_moduleSetSirenState_SirenOn";
-                displayName = "$STR_tts_lns_moduleChangeSiren_sirenOn";
-                tooltip = "$STR_tts_lns_moduleChangeSiren_sirenOn_desc";
+                displayName = "$STR_tts_lns_moduleChangeLightsSiren_sirenOn";
+                tooltip = "$STR_tts_lns_moduleChangeLightsSiren_sirenOn_desc";
                 typeName = "BOOL";
                 defaultValue = "false";
             };
             class SirenMode : Edit {
                 property = "tts_lns_moduleSetSirenState_SirenMode";
-                displayName = "$STR_tts_lns_moduleChangeSirens_sirenMode";
-                tooltip = "$STR_tts_lns_moduleChangeSirens_sirenMode_desc_alt";
+                displayName = "$STR_tts_lns_moduleChangeLightsSiren_sirenMode";
+                tooltip = "$STR_tts_lns_moduleChangeLightsSiren_sirenMode_desc_alt";
                 typeName = "NUMBER";
                 defaultValue = "0";
             };

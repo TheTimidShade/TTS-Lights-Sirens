@@ -1,6 +1,10 @@
 ## Changelog
 Read below for complete changelog history.
 
+### 27/11/2021
+Applied changes from script version:
+- Merged 'Change Lights' and 'Change Siren' ZEN module.
+
 ### 22/11/2021
 Applied changes from script version:
 - Adjusted light point settings.

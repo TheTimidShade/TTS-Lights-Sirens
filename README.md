@@ -1,6 +1,10 @@
 ## Changelog
 Read below for complete changelog history.
 
+### 02/01/2022
+Applied changes from script version:
+- Fixed an issue with the actions not being added correctly in multiplayer for vehicles that did not have a variable name.
+
 ### 27/11/2021
 Applied changes from script version:
 - Merged 'Change Lights' and 'Change Siren' ZEN module.

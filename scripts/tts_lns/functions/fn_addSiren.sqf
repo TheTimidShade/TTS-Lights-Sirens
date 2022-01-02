@@ -71,8 +71,28 @@ if (!(_vehicle getVariable ["tts_lns_hasSiren", false])) then
     _vehicle setVariable ["tts_lns_hasSiren", true, true];
     _vehicle setVariable ["tts_lns_fakeLightBarObjs", [objNull, objNull], true];
 
+    private _messagePrefix = "";
     // compatibility for JIP
-    private _messagePrefix = format ["%1_", _vehicle];
+    // use varname to generate unique JIP message otherwise use a counter
+    private _varName = vehicleVarName _vehicle;
+    if (_varName != "") then {
+        _messagePrefix = _varName;
+    } else {
+        // first check to see if the vehicle already has an ID assigned
+        private _vicID = _vehicle getVariable ["tts_lns_vehicleID", -1];
+        
+        private _nextID = -1;
+        if (_vicID != -1) then {
+            _nextID = _vicID;
+        } else {
+            _nextID = missionNamespace getVariable ["tts_lns_vehicleSirenID", 0]; // get next ID from counter
+            missionNamespace setVariable ["tts_lns_vehicleSirenID", _nextID + 1, true];
+            _vehicle setVariable ["tts_lns_vehicleID", _nextID, true];
+        };
+       
+        _messagePrefix = "tts_lns_vic_" + str _nextID;
+    };
+    
     private _jipMessages = [];
     _jipMessages pushBack ([_vehicle] remoteExec ["tts_lns_fnc_addSirenActions", 0, _messagePrefix + "actions"]);
     _jipMessages pushBack ([_vehicle] remoteExec ["tts_lns_fnc_handleSirenJIP", 0, _messagePrefix + "jipToggle"]);
